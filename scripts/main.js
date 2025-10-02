@@ -1,11 +1,17 @@
 // Main JavaScript file for Atlas Robot website
 
+/**
+ * Main application class for IA & Automação landing page
+ * Handles all interactive functionality and dynamic content loading
+ */
 class AtlasRobotApp {
     constructor() {
+        // Device and state management
         this.isMobile = window.innerWidth < 768;
         this.isMenuOpen = false;
         this.lottiePlayer = null;
         
+        // Initialize the application
         this.init();
     }
 
