@@ -6,7 +6,7 @@ Este projeto visa desenvolver uma landing page moderna e responsiva para uma emp
 
 ## 👥 Equipe (Simulada)
 
-*   **Manus** (IA - Desenvolvedor Principal)
+*   Wuender, Kaique, João (Desenvolvedores principais)
 *   **Usuário** (Gerente de Projeto / Revisor)
 
 ## 🚀 Entregas Obrigatórias
