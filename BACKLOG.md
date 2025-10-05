@@ -93,3 +93,11 @@ Este documento detalha as tarefas a serem realizadas para o desenvolvimento da l
 *   **Status:** Pendente
 *   **Estimativa:** 0.5 horas
 *   **Descrição:** Empacotar o projeto final e entregar ao usuário, juntamente com a documentação relevante (README, BACKLOG, relatórios).
+
+
+### 16. Implementar seção de depoimentos de clientes
+*   **Prioridade:** Média
+*   **Status:** Pendente
+*   **Estimativa:** 3 horas
+*   **Descrição:** Adicionar uma seção para exibir depoimentos de clientes satisfeitos, a fim de aumentar a prova social do serviço.
+
