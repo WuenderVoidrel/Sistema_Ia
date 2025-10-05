@@ -56,7 +56,3 @@ Para cada tarefa do backlog, o seguinte fluxo de trabalho será aplicado:
 *   `ACCESSIBILITY_REPORT.md`: Relatório detalhado sobre acessibilidade e responsividade.
 *   `COMPONENT_ORGANIZATION.md`: Descrição da organização e posicionamento dos componentes na home page.
 
-## 📄 Licença
-
-Este projeto é de código aberto e está disponível sob a licença MIT. (Ajustar conforme a licença real do projeto, se houver).
-
