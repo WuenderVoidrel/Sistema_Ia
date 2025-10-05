@@ -4,10 +4,9 @@
 
 Este projeto visa desenvolver uma landing page moderna e responsiva para uma empresa fictícia de **Inteligência Artificial e Automação**, focando em soluções como chatbots, OCR, Machine Learning e visão computacional. O desenvolvimento segue um fluxo de trabalho colaborativo com controle de versão Git, gerenciamento de tarefas e aplicação de boas práticas de desenvolvimento web.
 
-## 👥 Equipe (Simulada)
+## 👥 Equipe
 
 *   Wuender, Kaique, João (Desenvolvedores principais)
-*   **Usuário** (Gerente de Projeto / Revisor)
 
 ## 🚀 Entregas Obrigatórias
 
@@ -32,11 +31,10 @@ Para cada tarefa do backlog, o seguinte fluxo de trabalho será aplicado:
     *   `refactor:` para otimizações de código sem mudança de funcionalidade.
     *   `chore:` para tarefas rotineiras ou de manutenção.
 4.  **Pull Request (PR) Simulado:** Após a conclusão da tarefa, um PR será "aberto" para a branch principal (`main`). Este PR incluirá uma descrição do que foi feito, referência à tarefa do backlog e, se aplicável, links ou prints para visualização.
-5.  **Code Review Simulado:** O "revisor" (usuário) poderá "comentar" no PR, sugerindo melhorias ou aprovando. A "mesclagem" só ocorrerá após a "aprovação".
 
 ## 🎨 Design e Desenvolvimento da Landing Page
 
-*   **Base de Design:** O design foi adaptado a partir de um roteiro fornecido, focado em IA e Automação.
+*   **Base de Design:** O design foi adaptado a partir de um roteiro, focado em IA e Automação.
 *   **Responsividade:** A página é totalmente responsiva e funciona em desktops e dispositivos móveis.
 *   **Acessibilidade:** Testes básicos de acessibilidade foram realizados, incluindo `alt texts` em imagens e estrutura semântica. Um relatório detalhado de acessibilidade (`ACCESSIBILITY_REPORT.md`) está disponível.
 
