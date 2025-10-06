@@ -1,4 +1,4 @@
-# Landing Page IA & Automação -> : https://sistema-ia-five.vercel.app/
+# Landing Page IA & Automação : https://sistema-ia-five.vercel.app/
 
 ## Objetivo do Projeto
 
