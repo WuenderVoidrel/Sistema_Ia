@@ -256,3 +256,18 @@ a:focus {
     display: none !important;
   }
 }
+.logo{
+  width: 225px;
+  height: 40px;
+}
+#hero-image{
+  width: 267px;
+  height: 447px;
+}
+.perfil{
+  width: 150px; /* Largura igual à altura */
+  height: 150px; /* Largura igual à altura */
+  border-radius: 50%; /* Cria um círculo */
+  object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+}
+
