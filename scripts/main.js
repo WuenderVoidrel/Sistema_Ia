@@ -1,9 +1,21 @@
-// Main JavaScript file for Atlas Robot website
+    // ===== Config de Scrol Automatico =====
+    ScrollReveal({
+    reset: false,           // repete animação ao voltar a rolar
+    distance: '30px',      // distância do movimento
+    duration: 1500,        // tempo da animação
+    delay: 150,             // atraso inicial
+    easing: 'ease-in-out'
+    });
 
-/**
- * Main application class for IA & Automação landing page
- * Handles all interactive functionality and dynamic content loading
- */
+        // ===== Aplicar efeito em cada seção =====
+
+        // Cabeçalho
+        ScrollReveal().reveal('#navbar', { origin: 'top' });
+
+        // Seção principal
+        ScrollReveal().reveal('#cases', { origin: 'top' });
+
+        
 class AtlasRobotApp {
     constructor() {
         // Device and state management
