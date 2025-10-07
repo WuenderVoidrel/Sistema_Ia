@@ -270,4 +270,28 @@ a:focus {
   border-radius: 50%; /* Cria um círculo */
   object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
 }
+#logos .group {
+    will-change: transform;
+    animation: scrolling 10s linear infinite;
+  }
+
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  #logos .carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    gap: 2rem;
+  }
+
+  #logos .carousel:hover .group {
+    animation-play-state: paused;
+  }
 
