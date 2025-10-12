@@ -489,6 +489,8 @@ class AtlasRobotApp {
         const prevBtn = document.getElementById("team-prev");
         const nextBtn = document.getElementById("team-next");
         const indicatorsContainer = document.querySelector(".team-indicators");
+        const sideLeft = document.getElementById("side-left");
+        const sideRight = document.getElementById("side-right");
 
         if (!prevBtn || !nextBtn || !indicatorsContainer) return;
 
@@ -519,12 +521,30 @@ class AtlasRobotApp {
             this.updateFeaturedMember();
         });
 
+        // Adiciona eventos de clique nos perfis laterais
+        if (sideLeft) {
+            sideLeft.addEventListener("click", () => {
+                const index = parseInt(sideLeft.dataset.index);
+                this.currentMemberIndex = index;
+                this.updateFeaturedMember();
+            });
+        }
+
+        if (sideRight) {
+            sideRight.addEventListener("click", () => {
+                const index = parseInt(sideRight.dataset.index);
+                this.currentMemberIndex = index;
+                this.updateFeaturedMember();
+            });
+        }
+
         this.updateFeaturedMember(); // Inicializa o carrossel com o primeiro membro
     }
 
     updateFeaturedMember() {
         const member = this.teamMembers[this.currentMemberIndex];
 
+        // Atualiza o perfil em destaque
         document.getElementById("featured-image").src = member.image;
         document.getElementById("featured-name").textContent = member.name;
         document.getElementById("featured-role").textContent = member.role;
@@ -533,6 +553,30 @@ class AtlasRobotApp {
         document.getElementById("featured-linkedin").href = member.linkedin;
         document.getElementById("featured-email").href = `mailto:${member.email}`;
         document.getElementById("featured-profile-link").href = member.profileLink;
+
+        // Calcula os índices dos perfis laterais
+        const leftIndex = (this.currentMemberIndex - 1 + this.teamMembers.length) % this.teamMembers.length;
+        const rightIndex = (this.currentMemberIndex + 1) % this.teamMembers.length;
+
+        // Atualiza o perfil lateral esquerdo
+        const sideLeft = document.getElementById("side-left");
+        if (sideLeft) {
+            const leftMember = this.teamMembers[leftIndex];
+            sideLeft.dataset.index = leftIndex;
+            sideLeft.querySelector(".side-avatar img").src = leftMember.image;
+            sideLeft.querySelector(".side-avatar img").alt = leftMember.name;
+            sideLeft.querySelector(".side-name").textContent = leftMember.name;
+        }
+
+        // Atualiza o perfil lateral direito
+        const sideRight = document.getElementById("side-right");
+        if (sideRight) {
+            const rightMember = this.teamMembers[rightIndex];
+            sideRight.dataset.index = rightIndex;
+            sideRight.querySelector(".side-avatar img").src = rightMember.image;
+            sideRight.querySelector(".side-avatar img").alt = rightMember.name;
+            sideRight.querySelector(".side-name").textContent = rightMember.name;
+        }
 
         // Atualiza os indicadores
         document.querySelectorAll(".team-indicator").forEach((indicator, index) => {
