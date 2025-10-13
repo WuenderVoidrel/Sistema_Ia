@@ -1,4 +1,3 @@
-
     // ===== Config de Scrol Automatico =====
     ScrollReveal({
     reset: false,           // repete animação ao voltar a rolar
@@ -24,41 +23,6 @@ class AtlasRobotApp {
         this.isMenuOpen = false;
         this.lottiePlayer = null;
         
-        // Team carousel data and state
-        this.teamMembers = [
-            {
-                name: "Wuender Bueno",
-                role: "Especialista em IA & Machine Learning",
-                description: "Apaixonado por Inteligência Artificial e Machine Learning, com foco em desenvolver soluções inovadoras que transformam dados em insights acionáveis. Experiência em modelos preditivos, NLP e visão computacional.",
-                image: "./assets/wuender.png",
-                github: "https://github.com/WuenderVoidrel",
-                linkedin: "https://www.linkedin.com/in/wuender-martins-450b41385/",
-                email: "wuender@example.com",
-                profileLink: "./team/wuender.html"
-            },
-            {
-                name: "Kaique Alves",
-                role: "Desenvolvedor Full-stack & Automação",
-                description: "Desenvolvedor Full-stack com expertise em automação de processos e integração de sistemas. Focado em criar soluções robustas e escaláveis que otimizam operações e geram valor para o negócio.",
-                image: "./assets/kaique.jpeg",
-                github: "https://github.com/kaiquedev027",
-                linkedin: "https://www.linkedin.com/in/kaique-alves-fernandes-27656b207/",
-                email: "kaique@example.com",
-                profileLink: "./team/kaique.html"
-            },
-            {
-                name: "João Leal",
-                role: "Engenheiro de Dados & Chatbots",
-                description: "Engenheiro de Dados com experiência na construção e otimização de pipelines de dados e desenvolvimento de chatbots inteligentes. Apaixonado por transformar dados brutos em informações estratégicas e conversas fluidas.",
-                image: "./assets/joao.png",
-                github: "https://github.com/joaolealdev",
-                linkedin: "https://www.linkedin.com/in/joao-leal1/",
-                email: "joao@example.com",
-                profileLink: "./team/joao.html"
-            }
-        ];
-        this.currentMemberIndex = 0;
-        
         // Initialize the application
         this.init();
     }
@@ -75,7 +39,6 @@ class AtlasRobotApp {
         this.loadServices();
         this.loadCases();
         this.initializeContactForm();
-        this.setupTeamCarousel(); // Initialize team carousel
     }
 
     setupEventListeners() {
@@ -437,7 +400,8 @@ class AtlasRobotApp {
         }
 
         // Validate email format
-        const emailRegex = /^[^
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
             this.showFormError('Por favor, insira um e-mail válido.');
             return;
         }
@@ -474,108 +438,86 @@ class AtlasRobotApp {
         }
     }
 
+    async simulateFormSubmission(data) {
+        // Simulate network delay
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                console.log('Form submitted:', data);
+                resolve();
+            }, 1500);
+        });
+    }
+
     showFormError(message) {
-        // Implement error display logic (e.g., show a temporary alert or message below the form)
-        console.error(message);
-        alert(message); // For simplicity, using alert
-    }
-
-    simulateFormSubmission(data) {
-        return new Promise(resolve => setTimeout(() => resolve(), 1500));
-    }
-
-    // Team Carousel Methods
-    setupTeamCarousel() {
-        const prevBtn = document.getElementById("team-prev");
-        const nextBtn = document.getElementById("team-next");
-        const indicatorsContainer = document.querySelector(".team-indicators");
-
-        if (!prevBtn || !nextBtn || !indicatorsContainer) return;
-
-        // Cria os indicadores dinamicamente
-        indicatorsContainer.innerHTML = ''; // Limpa indicadores existentes
-        this.teamMembers.forEach((_, index) => {
-            const button = document.createElement("button");
-            button.classList.add("team-indicator");
-            if (index === this.currentMemberIndex) {
-                button.classList.add("active");
-            }
-            button.dataset.member = index;
-            button.setAttribute("aria-label", this.teamMembers[index].name);
-            button.addEventListener("click", () => {
-                this.currentMemberIndex = index;
-                this.updateFeaturedMember();
-            });
-            indicatorsContainer.appendChild(button);
-        });
-
-        prevBtn.addEventListener("click", () => {
-            this.currentMemberIndex = (this.currentMemberIndex - 1 + this.teamMembers.length) % this.teamMembers.length;
-            this.updateFeaturedMember();
-        });
-
-        nextBtn.addEventListener("click", () => {
-            this.currentMemberIndex = (this.currentMemberIndex + 1) % this.teamMembers.length;
-            this.updateFeaturedMember();
-        });
-
-        this.updateFeaturedMember(); // Inicializa o carrossel com o primeiro membro
-    }
-
-    updateFeaturedMember() {
-        const member = this.teamMembers[this.currentMemberIndex];
-
-        document.getElementById("featured-image").src = member.image;
-        document.getElementById("featured-name").textContent = member.name;
-        document.getElementById("featured-role").textContent = member.role;
-        document.getElementById("featured-description").textContent = member.description;
-        document.getElementById("featured-github").href = member.github;
-        document.getElementById("featured-linkedin").href = member.linkedin;
-        document.getElementById("featured-email").href = `mailto:${member.email}`;
-        document.getElementById("featured-profile-link").href = member.profileLink;
-
-        // Atualiza os indicadores
-        document.querySelectorAll(".team-indicator").forEach((indicator, index) => {
-            if (index === this.currentMemberIndex) {
-                indicator.classList.add("active");
-            } else {
-                indicator.classList.remove("active");
-            }
-        });
-
-        // Recarrega os ícones Lucide para garantir que apareçam corretamente
-        this.initializeLucideIcons();
-    }
-
-    // Helper methods for navbar and mobile menu (existing methods)
-    updateNavbarState() {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        // Create or update error message
+        let errorDiv = document.getElementById('form-error');
+        
+        if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.id = 'form-error';
+            errorDiv.className = 'mt-4 p-4 bg-red-50 border border-red-200 rounded-lg';
+            
+            const contactForm = document.getElementById('contact-form');
+            contactForm.appendChild(errorDiv);
         }
-    }
 
-    handleScroll() {
-        this.updateNavbarState();
+        errorDiv.innerHTML = `
+            <div class="flex items-center">
+                <i data-lucide="alert-circle" class="w-5 h-5 text-red-500 mr-3"></i>
+                <p class="text-red-700">${message}</p>
+            </div>
+        `;
+
+        // Re-initialize icons
+        this.initializeLucideIcons();
+
+        // Hide error after 5 seconds
+        setTimeout(() => {
+            if (errorDiv) {
+                errorDiv.remove();
+            }
+        }, 5000);
     }
 
     toggleMobileMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
         const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu) {
-            mobileMenu.classList.toggle('open');
-            document.body.classList.toggle('overflow-hidden');
-            this.isMenuOpen = !this.isMenuOpen;
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        
+        if (!mobileMenu || !mobileMenuBtn) return;
+
+        if (this.isMenuOpen) {
+            mobileMenu.classList.remove('opacity-0', 'translate-x-full', 'pointer-events-none');
+            mobileMenu.classList.add('opacity-100', 'translate-x-0');
+            document.body.style.overflow = 'hidden';
+            
+            // Update button icon
+            const icon = mobileMenuBtn.querySelector('[data-lucide]');
+            if (icon) {
+                icon.setAttribute('data-lucide', 'x');
+                lucide.createIcons();
+            }
+        } else {
+            this.closeMobileMenu();
         }
     }
 
     closeMobileMenu() {
+        this.isMenuOpen = false;
         const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu) {
-            mobileMenu.classList.remove('open');
-            document.body.classList.remove('overflow-hidden');
-            this.isMenuOpen = false;
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        
+        if (!mobileMenu || !mobileMenuBtn) return;
+
+        mobileMenu.classList.add('opacity-0', 'translate-x-full', 'pointer-events-none');
+        mobileMenu.classList.remove('opacity-100', 'translate-x-0');
+        document.body.style.overflow = '';
+        
+        // Update button icon
+        const icon = mobileMenuBtn.querySelector('[data-lucide]');
+        if (icon) {
+            icon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
         }
     }
 
@@ -584,15 +526,95 @@ class AtlasRobotApp {
             top: 0,
             behavior: 'smooth'
         });
+
+        // Close mobile menu if open
+        if (this.isMenuOpen) {
+            this.closeMobileMenu();
+        }
+    }
+
+    handleScroll() {
+        this.updateNavbarState();
     }
 
     handleResize() {
-        // Any specific logic for resize events
+        // Close mobile menu on resize to desktop
+        if (!this.isMobile && this.isMenuOpen) {
+            this.closeMobileMenu();
+        }
+    }
+
+    updateNavbarState() {
+        const navbar = document.getElementById('navbar');
+        if (!navbar) return;
+
+        const isScrolled = window.scrollY > 10;
+        
+        if (isScrolled) {
+            navbar.classList.add('scrolled');
+            navbar.classList.remove('bg-transparent');
+            navbar.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-sm');
+        } else {
+            navbar.classList.remove('scrolled');
+            navbar.classList.add('bg-transparent');
+            navbar.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-sm');
+        }
+    }
+
+    // Utility methods
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
     }
 }
 
-// Initialize the app when the DOM is fully loaded
+// Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new AtlasRobotApp();
 });
 
+// Handle page visibility changes
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        // Page is hidden, pause animations if needed
+        console.log('Page hidden');
+    } else {
+        // Page is visible, resume animations if needed
+        console.log('Page visible');
+    }
+});
+
+// Error handling
+window.addEventListener('error', (e) => {
+    console.error('JavaScript error:', e.error);
+});
+
+// Unhandled promise rejection handling
+window.addEventListener('unhandledrejection', (e) => {
+    console.error('Unhandled promise rejection:', e.reason);
+});
+
+// Export for potential module usage
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = AtlasRobotApp;
+}

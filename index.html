@@ -194,50 +194,26 @@
         </section>
 
         <!-- Logos Section -->
-         <section id="logos" class="py-16 bg-gradient-to-b from-white to-gray-50">
-            <div class="container mx-auto px-4 max-w-7xl">
-                <p class="text-center text-gray-700 text-lg font-medium mb-12">Confiado por empresas de diversos setores</p>
+         <section id="logos" class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <p class="text-center text-gray-600 mb-8">Confiado por empresas de diversos setores</p>
 
-                <div class="logos-wrapper">
-                    <div class="logos-track">
-                        <div class="logo-item">
-                            <img src="./assets/Google.png" alt="Google" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/loggi.png" alt="Loggi" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/olx.png" alt="OLX" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/ibm-logo.png" alt="IBM" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/nubank.png" alt="Nubank" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/logo-pagarme.png" alt="PagarMe" />
-                        </div>
-                        <!-- Duplicando os logos para criar o efeito de loop infinito -->
-                        <div class="logo-item">
-                            <img src="./assets/Google.png" alt="Google" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/loggi.png" alt="Loggi" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/olx.png" alt="OLX" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/ibm-logo.png" alt="IBM" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/nubank.png" alt="Nubank" />
-                        </div>
-                        <div class="logo-item">
-                            <img src="./assets/logo-pagarme.png" alt="PagarMe" />
-                        </div>
-                    </div>
+                <div class="carousel">
+                <div class="group w-24 h-12 bg-white rounded flex items-center justify-center">
+                    <img src="/assets/Google.png" alt="Google" />
+                </div>
+                <div class="group w-24 h-12 bg-white rounded flex items-center justify-center">
+                    <img src="/assets/loggi.png" alt="Loggi" />
+                </div>
+                <div class="group w-24 h-12 bg-white rounded flex items-center justify-center">
+                    <img src="/assets/olx.png" alt="OLX" />
+                </div>
+                <div class="group w-24 h-12 bg-white rounded flex items-center justify-center">
+                    <img src="/assets/ibm-logo.png" alt="IBM" />
+                </div>
+                <div class="group w-24 h-12 bg-white rounded flex items-center justify-center">
+                    <img src="/assets/nubank.png" alt="Nubank" />
+                </div>
                 </div>
             </div>
         </section>
@@ -541,56 +517,38 @@
 
                 <!-- Team -->
                 <div class="text-center mb-12">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Nosso Time</h3>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Conheça os especialistas por trás das nossas soluções de IA e automação</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Nosso Time</h3>
                 </div>
 
-                <!-- Team Carousel -->
-                <div class="team-carousel-container">
-                    <!-- Featured Member (Center) -->
-                    <div class="featured-member">
-                        <div class="featured-avatar">
-                            <img id="featured-image" src="./assets/wuender.png" alt="Membro do time em destaque">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img class="perfil" src="/assets/kaique.jpeg">
                         </div>
-                        <h4 id="featured-name" class="text-2xl font-bold text-gray-900 mb-2 mt-6">Wuender Bueno</h4>
-                        <p id="featured-role" class="text-orange-600 font-medium mb-4">Especialista em IA & Machine Learning</p>
-                        <p id="featured-description" class="text-gray-600 max-w-xl mx-auto mb-6">
-                            Apaixonado por Inteligência Artificial e Machine Learning, com foco em desenvolver soluções inovadoras que transformam dados em insights acionáveis. Experiência em modelos preditivos, NLP e visão computacional.
-                        </p>
-                        
-                        <!-- Social Links -->
-                        <div class="social-links">
-                            <a id="featured-github" href="https://github.com/WuenderVoidrel" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                                <i data-lucide="github" class="w-5 h-5"></i>
-                            </a>
-                            <a id="featured-linkedin" href="https://www.linkedin.com/in/wuender-martins-450b41385/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                                <i data-lucide="linkedin" class="w-5 h-5"></i>
-                            </a>
-                            <a id="featured-email" href="mailto:wuender@example.com" class="social-link" aria-label="Email">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                            </a>
-                        </div>
-
-                        <!-- View Full Profile Button -->
-                        <a id="featured-profile-link" href="./team/wuender.html" class="inline-flex items-center justify-center mt-6 bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02]">
-                            Ver Perfil Completo
-                            <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Kaique Alves</h4>
+                        <p class="text-black-600 font-medium mb-3"><a href="https://github.com/kaiquedev027">GitHub</a></p>
+                        <p class="text-blue-600 font-medium mb-3"><a href="https://www.linkedin.com/in/kaique-alves-fernandes-27656b207/">LinkedIn</a></p>
                     </div>
 
-                    <!-- Navigation Controls -->
-                    <button id="team-prev" class="team-nav-btn team-nav-prev" aria-label="Membro anterior">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <button id="team-next" class="team-nav-btn team-nav-next" aria-label="Próximo membro">
-                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                    </button>
+                    <!-- Team Member 2 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img class="perfil" src="/assets/joao.png">
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">João Leal</h4>
+                        <p class="text-black-600 font-medium mb-3"><a href="https://github.com/joaolealdev">GitHub</a></p>
+                        <p class="text-blue-600 font-medium mb-3"><a href="https://www.linkedin.com/in/joao-leal1/">LinkedIn</a></p>
+                    </div>
 
-                    <!-- Team Members Indicators -->
-                    <div class="team-indicators">
-                        <button class="team-indicator active" data-member="0" aria-label="Wuender Bueno"></button>
-                        <button class="team-indicator" data-member="1" aria-label="Kaique Alves"></button>
-                        <button class="team-indicator" data-member="2" aria-label="João Leal"></button>
+                    <!-- Team Member 3 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img class="perfil" src="/assets/wuender.png">
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Wuender Bueno</h4>
+                        <p class="text-black-600 font-medium mb-3"><a href="https://github.com/WuenderVoidrel">GitHub</a></p>
+                        <p class="text-blue-600 font-medium mb-3"><a href="https://www.linkedin.com/in/wuender-martins-450b41385/">LinkedIn</a></p>
                     </div>
                 </div>
             </div>

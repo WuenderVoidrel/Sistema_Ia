@@ -268,223 +268,28 @@ a:focus {
   border-radius: 100%; /* Cria um círculo */
   
 }
-/* Logos Section Styles */
-.logos-wrapper {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.logos-track {
-  display: flex;
-  gap: 4rem;
-  animation: scroll-logos 30s linear infinite;
-  width: fit-content;
-}
-
-.logo-item {
-  flex-shrink: 0;
-  width: 180px;
-  height: 90px;
-  background: white;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.logo-item:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.logo-item img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.logo-item:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-@keyframes scroll-logos {
-  0% {
-    transform: translateX(0);
+#logos .group {
+    will-change: transform;
+    animation: scrolling 10s linear infinite;
   }
-  100% {
-    transform: translateX(-50%);
+
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
-}
 
-.logos-wrapper:hover .logos-track {
-  animation-play-state: paused;
-}
-
-
-
-/* Team Carousel Styles */
-.team-carousel-container {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 1rem;
-}
-
-.featured-member {
-  text-align: center;
-  opacity: 1;
-  transition: all 0.5s ease;
-}
-
-.featured-avatar {
-  width: 180px;
-  height: 180px;
-  margin: 0 auto;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border: 6px solid white;
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-  padding: 6px;
-  transition: all 0.3s ease;
-}
-
-.featured-avatar:hover {
-  transform: scale(1.05);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-.featured-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 50%;
-  color: #6b7280;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.social-link:hover {
-  background: #f97316;
-  border-color: #f97316;
-  color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
-}
-
-.team-nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 56px;
-  height: 56px;
-  background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: #374151;
-  z-index: 10;
-}
-
-.team-nav-btn:hover {
-  background: #f97316;
-  border-color: #f97316;
-  color: white;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
-}
-
-.team-nav-prev {
-  left: -28px;
-}
-
-.team-nav-next {
-  right: -28px;
-}
-
-.team-indicators {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-top: 3rem;
-}
-
-.team-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #d1d5db;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.team-indicator:hover {
-  background: #9ca3af;
-  transform: scale(1.2);
-}
-
-.team-indicator.active {
-  background: #f97316;
-  width: 32px;
-  border-radius: 6px;
-}
-
-/* Responsive adjustments for team carousel */
-@media (max-width: 768px) {
-  .team-nav-btn {
-    width: 44px;
-    height: 44px;
+  #logos .carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    gap: 2rem;
   }
-  
-  .team-nav-prev {
-    left: 0;
+
+  #logos .carousel:hover .group {
+    animation-play-state: paused;
   }
-  
-  .team-nav-next {
-    right: 0;
-  }
-  
-  .featured-avatar {
-    width: 140px;
-    height: 140px;
-  }
-  
-  .social-link {
-    width: 40px;
-    height: 40px;
-  }
-}
 
