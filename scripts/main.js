@@ -240,21 +240,21 @@ class AtlasRobotApp {
         if (!servicesGrid) return;
 
         servicesGrid.innerHTML = services.map(service => `
-            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] border border-gray-100">
+            <div class="group bg-gradient-to-r from-[#0e0918] to-[#241626] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] border border-gray-100">
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 ${service.color} rounded-xl flex items-center justify-center mr-4">
                         <i data-lucide="${service.icon}" class="w-6 h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900">${service.title}</h3>
+                    <h3 class="text-xl font-bold text-white">${service.title}</h3>
                 </div>
                 
-                <p class="text-gray-600 mb-6 leading-relaxed">${service.desc}</p>
+                <p class="text-white mb-6 leading-relaxed">${service.desc}</p>
                 
                 <div class="space-y-3">
                     ${service.highlights.map(highlight => `
                         <div class="flex items-center">
                             <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                            <span class="text-sm text-gray-700">${highlight}</span>
+                            <span class="text-sm text-white">${highlight}</span>
                         </div>
                     `).join('')}
                 </div>
@@ -299,30 +299,30 @@ class AtlasRobotApp {
         if (!casesGrid) return;
 
         casesGrid.innerHTML = cases.map(caseItem => `
-            <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] border border-gray-100">
+            <div class="group bg-gradient-to-r from-[#0e0918] to-[#241626] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] border border-gray-100">
                 <div class="flex items-center justify-between mb-6">
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-600">
                         ${caseItem.category}
                     </span>
-                    <span class="text-sm text-gray-500">${caseItem.duration}</span>
+                    <span class="text-sm text-white">${caseItem.duration}</span>
                 </div>
                 
-                <h3 class="text-xl font-bold text-gray-900 mb-4">${caseItem.title}</h3>
+                <h3 class="text-xl font-bold text-white mb-4">${caseItem.title}</h3>
                 
                 <div class="space-y-4 mb-6">
                     <div>
-                        <h4 class="font-semibold text-gray-800 mb-2">Problema:</h4>
-                        <p class="text-gray-600 text-sm">${caseItem.problem}</p>
+                        <h4 class="font-semibold text-[#fe681b] mb-2">Problema:</h4>
+                        <p class="text-white text-sm">${caseItem.problem}</p>
                     </div>
                     
                     <div>
-                        <h4 class="font-semibold text-gray-800 mb-2">Solução:</h4>
-                        <p class="text-gray-600 text-sm">${caseItem.solution}</p>
+                        <h4 class="font-semibold text-[#fe681b] mb-2">Solução:</h4>
+                        <p class="text-white text-sm">${caseItem.solution}</p>
                     </div>
                 </div>
                 
                 <div class="mb-6">
-                    <h4 class="font-semibold text-gray-800 mb-3">Impacto:</h4>
+                    <h4 class="font-semibold text-[#fe681b] mb-3">Impacto:</h4>
                     <div class="grid grid-cols-1 gap-2">
                         ${caseItem.impact.map(impact => `
                             <div class="flex items-center">
@@ -334,7 +334,7 @@ class AtlasRobotApp {
                 </div>
                 
                 <div class="mb-6">
-                    <h4 class="font-semibold text-gray-800 mb-3">Stack:</h4>
+                    <h4 class="font-semibold text-[#fe681b] mb-3">Stack:</h4>
                     <div class="flex flex-wrap gap-2">
                         ${caseItem.stack.map(tech => `
                             <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700">
