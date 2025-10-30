@@ -301,7 +301,7 @@ class AtlasRobotApp {
         casesGrid.innerHTML = cases.map(caseItem => `
             <div class="group bg-gradient-to-r from-[#0e0918] to-[#241626] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] border border-gray-100">
                 <div class="flex items-center justify-between mb-6">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-600">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-[#196fce] to-[#5635e6] text-white ">
                         ${caseItem.category}
                     </span>
                     <span class="text-sm text-white">${caseItem.duration}</span>
