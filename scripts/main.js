@@ -337,7 +337,7 @@ class AtlasRobotApp {
                     <h4 class="font-semibold text-[#fe681b] mb-3">Stack:</h4>
                     <div class="flex flex-wrap gap-2">
                         ${caseItem.stack.map(tech => `
-                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gradient-to-r from-[#196fce] to-[#5635e6] text-white">
                                 ${tech}
                             </span>
                         `).join('')}
