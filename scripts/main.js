@@ -253,14 +253,14 @@ class AtlasRobotApp {
                 <div class="space-y-3">
                     ${service.highlights.map(highlight => `
                         <div class="flex items-center">
-                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                            <span class="text-sm text-white">${highlight}</span>
+                            <div class="w-2 h-2 bg-[#8b828f] rounded-full mr-3"></div>
+                            <span class="text-base text-[#8b828f]">${highlight}</span>
                         </div>
                     `).join('')}
                 </div>
                 
                 <div class="mt-6 pt-6 border-t border-gray-100">
-                    <a href="#contact" class="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium transition-colors duration-300">
+                    <a href="#contact" class="inline-flex items-center text-[#fafafa] hover:text-[#fafafa] font-medium transition-colors duration-300">
                         Saiba mais
                         <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
                     </a>
@@ -311,30 +311,30 @@ class AtlasRobotApp {
                 
                 <div class="space-y-4 mb-6">
                     <div>
-                        <h4 class="font-semibold text-[#fe681b] mb-2">Problema:</h4>
-                        <p class="text-white text-sm">${caseItem.problem}</p>
+                        <h4 class="font-semibold text-[#fafafa] text-base">Problema:</h4>
+                        <p class="text-[#8b828f] text-base">${caseItem.problem}</p>
                     </div>
                     
                     <div>
-                        <h4 class="font-semibold text-[#fe681b] mb-2">Solução:</h4>
-                        <p class="text-white text-sm">${caseItem.solution}</p>
+                        <h4 class="font-semibold text-[#fafafa] text-base">Solução:</h4>
+                        <p class="text-[#8b828f] text-base">${caseItem.solution}</p>
                     </div>
                 </div>
                 
                 <div class="mb-6">
-                    <h4 class="font-semibold text-[#fe681b] mb-3">Impacto:</h4>
+                    <h4 class="font-semibold text-[#fafafa] text-base">Impacto:</h4>
                     <div class="grid grid-cols-1 gap-2">
                         ${caseItem.impact.map(impact => `
                             <div class="flex items-center">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span class="text-sm font-medium text-green-700">${impact}</span>
+                                <div class="w-2 h-2 bg-[#8b828f] rounded-full mr-3"></div>
+                                <span class="text-base font-medium text-[#8b828f]">${impact}</span>
                             </div>
                         `).join('')}
                     </div>
                 </div>
                 
                 <div class="mb-6">
-                    <h4 class="font-semibold text-[#fe681b] mb-3">Stack:</h4>
+                    <h4 class="font-semibold text-[#fafafa] text-base">Stack:</h4>
                     <div class="flex flex-wrap gap-2">
                         ${caseItem.stack.map(tech => `
                             <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gradient-to-r from-[#196fce] to-[#5635e6] text-white">
@@ -345,7 +345,7 @@ class AtlasRobotApp {
                 </div>
                 
                 <div class="pt-6 border-t border-gray-100">
-                    <a href="${caseItem.link}" class="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium transition-colors duration-300">
+                    <a href="${caseItem.link}" class="inline-flex items-center text-[#fafafa] hover:text-[#fafafa] font-medium transition-colors duration-300 text-base">
                         Ver mais detalhes
                         <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
                     </a>
