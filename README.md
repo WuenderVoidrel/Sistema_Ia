@@ -55,3 +55,5 @@ Para cada tarefa do backlog, o seguinte fluxo de trabalho será aplicado:
 *   `ACCESSIBILITY_REPORT.md`: Relatório detalhado sobre acessibilidade e responsividade.
 *   `COMPONENT_ORGANIZATION.md`: Descrição da organização e posicionamento dos componentes na home page.
 
+# Documentação da API
+Veja o README completo da API [aqui](https://github.com/usuario/api-projeto/blob/main/README.md).
