@@ -1,5 +1,4 @@
-# Landing Page IA & Automação : https://sistema-ia-five.vercel.app/
-
+# Landing Page IA & Automação:
 ## Objetivo do Projeto
 
 Este projeto visa desenvolver uma landing page moderna e responsiva para uma empresa fictícia de **Inteligência Artificial e Automação**, focando em soluções como chatbots, OCR, Machine Learning e visão computacional. O desenvolvimento segue um fluxo de trabalho colaborativo com controle de versão Git, gerenciamento de tarefas e aplicação de boas práticas de desenvolvimento web.
