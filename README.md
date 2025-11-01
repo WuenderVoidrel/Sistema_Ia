@@ -1,4 +1,4 @@
-# Landing Page IA & Automação:
+# Machine Flow IA
 ## Objetivo do Projeto
 
 Este projeto visa desenvolver uma landing page moderna e responsiva para uma empresa fictícia de **Inteligência Artificial e Automação**, focando em soluções como chatbots, OCR, Machine Learning e visão computacional. O desenvolvimento segue um fluxo de trabalho colaborativo com controle de versão Git, gerenciamento de tarefas e aplicação de boas práticas de desenvolvimento web.
@@ -55,5 +55,5 @@ Para cada tarefa do backlog, o seguinte fluxo de trabalho será aplicado:
 *   `ACCESSIBILITY_REPORT.md`: Relatório detalhado sobre acessibilidade e responsividade.
 *   `COMPONENT_ORGANIZATION.md`: Descrição da organização e posicionamento dos componentes na home page.
 
-# Documentação da API
-Veja o README completo da API [aqui](https://github.com/usuario/api-projeto/blob/main/README.md).
+# Projeto da API_Email
+Veja o Projeto completo da API [aqui](https://github.com/kaiquedev027/Api_Email).
