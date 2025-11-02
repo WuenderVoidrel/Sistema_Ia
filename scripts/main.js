@@ -618,3 +618,46 @@ window.addEventListener('unhandledrejection', (e) => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = AtlasRobotApp;
 }
+ document.addEventListener("DOMContentLoaded", () => {
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitText = document.getElementById("submit-text");
+    submitText.textContent = "Enviando...";
+    form.querySelector("button").disabled = true;
+
+ 
+    const data = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        company: document.getElementById("company").value.trim(),
+        message: document.getElementById("message").value.trim(),
+    };
+
+    try {
+        
+        const response = await fetch("https://apigmailteste.vercel.app/api/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            console.log("✅ Mensagem enviada com sucesso! Entraremos em contato em breve.");
+            form.reset();
+        } else {
+            console.log("❌ Erro ao enviar mensagem: " + result.message);
+        }
+    } catch (err) {
+        console.error("Erro no envio:", err);
+        console.log("❌ Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
+    } finally {
+        submitText.textContent = "Enviar Mensagem";
+        form.querySelector("button").disabled = false;
+    }
+});
+});
