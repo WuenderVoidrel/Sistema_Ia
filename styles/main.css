@@ -268,28 +268,24 @@ a:focus {
   border-radius: 100%; /* Cria um círculo */
   
 }
-#logos .group {
-    will-change: transform;
-    animation: scrolling 10s linear infinite;
-  }
 
-  @keyframes scrolling {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+/* ===== Carrossel Infinito Corrigido ===== */
+@keyframes infinite-scroll-logos {
+  0% {
+    transform: translateX(0);
   }
-
-  #logos .carousel {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    gap: 2rem;
+  100% {
+    transform: translateX(calc(-100% / 2));
   }
+}
 
-  #logos .carousel:hover .group {
-    animation-play-state: paused;
-  }
+.animate-infinite-scroll-logos {
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll-logos 40s linear infinite;
+}
 
+/* Pausar ao passar */
+#logos:hover .animate-infinite-scroll-logos {
+  animation-play-state: paused;
+}
